@@ -1,5 +1,7 @@
 package ru.cyberfuzz.mydelivery.status;
 
+import javax.persistence.Embeddable;
+
 /**
  * Класс DeliveryStatus
  *

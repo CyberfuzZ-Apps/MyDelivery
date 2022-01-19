@@ -4,7 +4,10 @@ import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
+import org.springframework.stereotype.Component;
 
+import javax.persistence.Column;
+import javax.persistence.Embeddable;
 import java.util.Objects;
 
 /**
@@ -13,12 +16,14 @@ import java.util.Objects;
  * @author Evgeniy Zaytsev
  * @version 1.0
  */
+@Embeddable
 @Getter
 @Setter
 @RequiredArgsConstructor
 @ToString
 public class Food {
 
+    @Column(name = "food_id")
     private int id;
     private String name;
     private int price;
