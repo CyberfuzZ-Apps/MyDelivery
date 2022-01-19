@@ -33,6 +33,9 @@ public class DeliveryService {
     @Transactional
     public Delivery saveDelivery(Order order) {
         Delivery delivery = applicationContext.getBean(Delivery.class);
+        if (delivery.getId() != 0) {
+            delivery.setId(0);
+        }
         Courier courier = courierService.findRandomCourier();
         delivery.setOrder(order);
         delivery.setCourier(courier);
